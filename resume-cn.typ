@@ -9,7 +9,7 @@
 = #redact(alter: "jpwang")[#resume_name]
 
 #fa[#phone] #redact(mark: true)[#resume_phone] |
-#fa[#envelope] jpwang.cs\@gmail.com |
+#fa[#envelope] jpwang\@smail.nju.edu.cn |
 #fa[#github] #link("https://github.com/jjppp")[jjppp] |
 #fa[#globe] #link("https://jjppp.github.io")[jjppp.github.io]
 
