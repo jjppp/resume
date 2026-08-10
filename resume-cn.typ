@@ -19,14 +19,14 @@
   tl: [南京大学],
   tr: [2024.09 - 2027.06 (预计)],
 )[
-  硕士, 计算机科学与技术｜#link("https://pascal-lab.net")[PASCAL Lab], 导师：李#redact(mark: true)[樾]｜研究方向为*程序语言*与*程序分析*。 #linebreak()
+  硕士, 计算机科学与技术｜#link("https://pascal-lab.net")[PASCAL Lab], 导师：李#redact(mark: true)[樾]｜研究方向: *程序语言*与*程序分析* #linebreak()
   助教工作: 计算机程序的构造和解释 (SICP/CS61a, *Python/Scheme*, 2024 秋、2025 秋)
 ]
 #cventry(
   tl: [南京大学],
   tr: [2020.09 - 2024.06],
 )[
-  本科, 信息与计算科学 (强基计划) | GPA: 4.54/5.00. #linebreak()
+  本科, 信息与计算科学 (强基计划) | GPA: 4.54/5.00 #linebreak()
   *优秀毕业生* / *基础学科专项奖学金* / ICPC 2021 区域赛*银牌*等
 ]
 
@@ -35,27 +35,13 @@
 #cventry(
   tl: [深度求索 (DeepSeek)],
   bl: [系统组],
-  br: [线上核心服务实习生 (Rust)],
+  br: [线上核心服务实习生],
   tr: [2026.07 - 至今],
 )[
-  - 负责为线上 chat 服务添加搜索功能后端支持
+  - 负责为线上 chat 服务添加搜索功能支持
+  - 负责重构账号和鉴权系统
 ]
 
-#cventry(
-  tl: [平头哥 (阿里巴巴）],
-  bl: [编译优化组],
-  br: [ai 编译优化实习生],
-  tr: [2026.05 - 2026.06],
-)[
-  - 为 triton 实现 TTGIR 上的分析、优化算法, 以指导后续高效代码生成
-    - 改进 TTGIR 上的区间分析算法 (Range Analysis), 针对比特值和数值两种应用场景设计了区间编码方案, 以实现精确区间分析
-    - 参与 triton MLIR 编译后端维护, 修复一个 RemoveDeadValues 优化 pass 的 bug
-  //   - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令 *vectorizer* 的合并, 旨在对齐 LLVM 上游并降低维护开销：
-  //     - 为了支持图形访存指令, 独立设计了*多地址图形访存指令*的编码方案, 以复用 LLVM 访存向量化器的核心流程;
-  //     - 为图形指令添加 alias analysis 的支持, 深入分析 BasicAA 和 SCEVAA 以支持新 intrinsics;
-  //     - 改进了 LLVM 的 alignment inference 算法, 通过对 SCEV 求解最大公约数, 以支持对循环迭代变量的对齐推断;
-  //     - 实现了*十余个*图形访存指令向量化相关*优化*, 包括*非规则访存序列填充*等, 将向量化成功率提升了 *40%*;
-]
 == #fa[#file] 学术论文
 
 #cventry(
@@ -65,8 +51,8 @@
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 从*堆抽象技术*出发, 为别名分析 (Alias Analysis) 进行加速, 旨在为*编译器*、*程序分析器*等提供更高效的别名分析能力
-  - 达到*学术界先进水平*: 获得*平均 40x 加速*, 精度仅丢失 0.4%, 在*函数内联*、*逃逸分析*、*副作用分析*等6项指标上优于已有最先进算法
-  - 为加速技术提供*理论精度保障*, 使得速度提升不会显著影响别名分析精度
+  - 获得*平均 40x 加速*, 精度仅丢失 0.4%, 在*函数内联*、*逃逸分析*、*副作用分析*等6项指标上优于已有最先进算法
+  - 为加速技术提供*理论精度保障*, 速度提升不会显著影响别名分析精度
 ]
 
 #cventry(
@@ -92,22 +78,35 @@
 ]
 
 
-== #fa[#project-diagram] 个人项目
+== #fa[#project-diagram] 开源项目
+
+  - #ghrepo("pascal-lab/Tai-e"), 静态程序分析框架.
+    优化 pointer analysis 性能热点, 设计专用数据结构实现 30% 加速;
+    参与并行化分析算法设计与实现, 设计启发式负载估计以优化工作调度, 实现 16 核下加速 8 倍
+  - #iconlink(
+      "https://github.com/llvm/llvm-project/pulls?q=is%3Apr+author%3Ajjppp",
+      label: [#text(fill: rgb(70, 70, 70))[llvm]/#text(weight: "semibold")[llvm-project]],
+      icon: github,
+    ), 编译器中端优化/基础设施.
+    改进 vector-combine 对等价 reduction chains 的识别算法, 设计 vector lanes 上的等价关系, 使得更多 horizontal reductions 可被向量化折叠;
+    为 inst-combine 增加 `fpow` fast-math 优化, 在 llvm IR 层面解决代码生成问题;
+    修复多项 (7 个) 优化/代码生成正确性问题
+  - #iconlink(
+      "https://github.com/tile-ai/tilelang/pulls?q=is%3Apr+author%3Ajjppp",
+      label: [#text(fill: rgb(70, 70, 70))[tile-ai]/#text(weight: "semibold")[tilelang]],
+      icon: github,
+    )
+    修复多项编译正确性问题，包括 divergent flow 下的 masked warp synchronization,
+    sm_80+ int64/uint64 warp reduction 的 32-bit truncation,
+    以及 vectorized bool codegen 等
 
 #cventry(
-  tl: [Cmm],
+  tl: [C 优化编译器],
   tr: [#ghrepo("jjppp/cmm")],
 )[
   - 基于图灵完备的 C 语言子集, 支持函数调用、循环、结构化数据 (struct/union/array)
-  - 参考 LLVM/CraneLift, 实现了 PassManager、RewriterMatcher 等基础设施, 支持添加和管理拥有复杂依赖的 pass 并迭代至不动点
+  - 参考 LLVM, 实现了 PassManager、RewriterMatcher 等基础设施, 支持添加和管理拥有复杂依赖的 pass 并迭代至不动点
   - 采用基于 *SSA* 的 IR 设计，实现了*常量传播*、*循环不变量外提*、*归纳变量消除*等复杂编译优化
-]
-
-#cventry(
-  tl: [#fa[#code.branch] 开源社区贡献],
-)[
-  - 为 #ghrepo("llvm/llvm-project"), #ghrepo("pytorch/pytorch"), #ghrepo("tile-ai/tilelang") 等知名项目提交共十余个 PR, 更多请见#link("https://github.com/jjppp")[我的 GitHub]
-  - 负责维护静态程序分析平台 #ghrepo("pascal-lab/Tai-e"), 参与真实项目的持续迭代演进;
 ]
 
 == #fa[#laptop.code] 专业技能
