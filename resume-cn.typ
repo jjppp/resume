@@ -20,14 +20,14 @@
   tr: [2024.09 - 2027.06 (预计)],
 )[
   硕士, 计算机科学与技术｜#link("https://pascal-lab.net")[PASCAL Lab], 导师：李#redact(mark: true)[樾]｜研究方向: *程序语言*与*程序分析* #linebreak()
-  助教工作: 计算机程序的构造和解释 (SICP/CS61a, *Python/Scheme*, 2024 秋、2025 秋)
+  助教工作: 计算机程序的构造和解释 (SICP/CS61a, *Python｜Scheme*, 2024 秋、2025 秋)
 ]
 #cventry(
   tl: [南京大学],
   tr: [2020.09 - 2024.06],
 )[
   本科, 信息与计算科学 (强基计划) | GPA: 4.54/5.00 #linebreak()
-  *优秀毕业生* / *基础学科专项奖学金* / ICPC 2021 区域赛*银牌*等
+  *优秀毕业生*｜*基础学科专项奖学金*｜ICPC 2021 区域赛*银牌*
 ]
 
 == #fa[#briefcase] 工作经历
@@ -35,7 +35,7 @@
 #cventry(
   tl: [深度求索 (DeepSeek)],
   bl: [系统组],
-  br: [线上核心服务实习生],
+  br: [线上服务实习生],
   tr: [2026.07 - 至今],
 )[
   - 负责账号和鉴权系统
@@ -46,29 +46,29 @@
 
 #cventry(
   tl: [别名分析加速技术研究],
-  tr: [#link("https://2026.splashcon.org/details/oopsla-2026/111/Heap-Abstraction-via-Early-Confluent-Object-Merging-for-Pointer-Analysis")[OOPSLA 2026] (*CCF-A*, 程序分析顶会), *第一作者*],
+  tr: [#link("https://2026.splashcon.org/details/oopsla-2026/111/Heap-Abstraction-via-Early-Confluent-Object-Merging-for-Pointer-Analysis")[OOPSLA 2026] (*CCF-A*), *第一作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
-  - 从*堆抽象技术*出发, 为别名分析 (Alias Analysis) 进行加速, 旨在为*编译器*、*程序分析器*等提供更高效的别名分析能力
-  - 获得*平均 40x 加速*, 精度仅丢失 0.4%, 在*函数内联*、*逃逸分析*、*副作用分析*等6项指标上优于已有最先进算法
-  - 为加速技术提供*理论精度保障*, 速度提升不会显著影响别名分析精度
+  - 提出基于*堆抽象*的别名分析 (Alias Analysis) 加速方法, 旨在优化*编译器*、*程序分析器*的别名分析效率
+  - 相比基线获得*平均 40x 加速*, 平均精度仅丢失 0.4%, 在*函数内联*、*逃逸分析*、*副作用分析*等6项指标上优于已有最先进算法
+  - 从理论上刻画抽象方法的*精度保障*, 为性能-精度 trade-off 提供理论保障
 ]
 
 #cventry(
   //   tl: `[Valve],
   tl: [硬件程序分析技术研究],
-  tr: [#link("https://pldi26.sigplan.org/details/pldi-2026-papers/57/Exploiting-Sophisticated-Static-Analysis-for-Verilog")[PLDI 2026] (*CCF-A*, 程序语言顶会), *共同作者*],
+  tr: [#link("https://pldi26.sigplan.org/details/pldi-2026-papers/57/Exploiting-Sophisticated-Static-Analysis-for-Verilog")[PLDI 2026] (*CCF-A*), *共同作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
-  - 第一个支持复杂静态程序分析的开源 Verilog 分析框架
+  - 构建支持复杂静态程序分析的开源 Verilog 分析框架
   - 实现*复位*分析、*时序*分析、*信息流*分析等关键算法, 以支持*锁存器*推断、*时钟*推断、*安全性*分析等关键应用
-  - 在 11 个开源 Verilog 项目中找到了 18 个真实漏洞 (9 个为*首次*发现)
+  - 在 11 个开源 Verilog 项目中找到了 18 个真实漏洞/设计缺陷 (9 个为*首次*发现)
 ]
 
 #cventry(
   //   tl: `[Valve],
   tl: [Verilog 形式化语义研究 (Best Artifact Award)],
-  tr: [#link("https://2023.splashcon.org/details/splash-2023-oopsla/40/The-Essence-of-Verilog-A-Tractable-and-Tested-Operational-Semantics-for-Verilog")[OOPSLA 2023] (*CCF-A*, 程序分析顶会), *共同作者*],
+  tr: [#link("https://2023.splashcon.org/details/splash-2023-oopsla/40/The-Essence-of-Verilog-A-Tractable-and-Tested-Operational-Semantics-for-Verilog")[OOPSLA 2023] (*CCF-A*), *共同作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 对硬件描述语言 Verilog 的语义 (IEEE 1364-2005) 进行形式化*理论建模*, 整理为基于*小步操作语义*的执行规则
@@ -89,13 +89,13 @@
     ), 编译器中端优化/基础设施.
     改进 vector-combine 对等价 reduction chains 的识别算法, 设计 vector lanes 上的等价关系, 使得更多 horizontal reductions 可被向量化折叠;
     为 inst-combine 增加 `fpow` fast-math 优化, 在 llvm IR 层面解决代码生成问题;
-    修复多项 (7 个) 优化/代码生成正确性问题
+    修复 7 项优化/代码生成正确性问题
   - #iconlink(
       "https://github.com/tile-ai/tilelang/pulls?q=is%3Apr+author%3Ajjppp",
       label: [#text(fill: rgb(70, 70, 70))[tile-ai]/#text(weight: "semibold")[tilelang]],
       icon: github,
     )
-    修复多项编译正确性问题，包括 divergent flow 下的 masked warp synchronization,
+    定位并修复多项编译正确性问题，包括 divergent flow 下的 masked warp synchronization,
     sm_80+ int64/uint64 warp reduction 的 32-bit truncation,
     以及 vectorized bool codegen 等
 
@@ -103,7 +103,7 @@
   tl: [C 优化编译器],
   tr: [#ghrepo("jjppp/cmm")],
 )[
-  - 基于图灵完备的 C 语言子集, 支持函数调用、循环、结构化数据 (struct/union/array)
+  - 实现 C 语言子集编译器, 支持函数调用、循环、结构化数据 (struct/union/array)
   - 参考 LLVM, 实现了 PassManager、RewriterMatcher 等基础设施, 支持添加和管理拥有复杂依赖的 pass 并迭代至不动点
   - 采用基于 *SSA* 的 IR 设计，实现了*常量传播*、*循环不变量外提*、*归纳变量消除*等复杂编译优化
 ]
@@ -124,5 +124,5 @@
   //   - (*编译优化*)编译器中端、后端的分析和优化, 包括 Mem2Reg, VectorCombine, List Scheduling 等; 熟悉 *LLVM* 上的分析优化实现, 熟悉 LLVM-IR 与 MLIR;
   // ],
 
-  [*开发环境*], [熟悉 NeoVim / VS Code, 习惯在 Linux 下工作; 熟练使用生成式 AI 工具提高效率],
+  [*系统与工具*], [Linux, Git, GDB, perf, Docker; 使用生成式 AI 工具提高效率],
 )
