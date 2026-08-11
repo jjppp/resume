@@ -38,16 +38,15 @@
   br: [线上核心服务实习生],
   tr: [2026.07 - 至今],
 )[
-  - 负责为线上 chat 服务添加搜索功能支持
-  - 负责重构账号和鉴权系统
+  - 负责账号和鉴权系统
+  - 为线上 chat 服务添加搜索功能支持
 ]
 
 == #fa[#file] 学术论文
 
 #cventry(
-  //   tl: `[Valve],
   tl: [别名分析加速技术研究],
-  tr: [OOPSLA 2026 (*CCF-A*, 程序分析顶会), *第一作者*],
+  tr: [#link("https://2026.splashcon.org/details/oopsla-2026/111/Heap-Abstraction-via-Early-Confluent-Object-Merging-for-Pointer-Analysis")[OOPSLA 2026] (*CCF-A*, 程序分析顶会), *第一作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 从*堆抽象技术*出发, 为别名分析 (Alias Analysis) 进行加速, 旨在为*编译器*、*程序分析器*等提供更高效的别名分析能力
@@ -58,7 +57,7 @@
 #cventry(
   //   tl: `[Valve],
   tl: [硬件程序分析技术研究],
-  tr: [PLDI 2026 (*CCF-A*, 程序语言顶会), *共同作者*],
+  tr: [#link("https://pldi26.sigplan.org/details/pldi-2026-papers/57/Exploiting-Sophisticated-Static-Analysis-for-Verilog")[PLDI 2026] (*CCF-A*, 程序语言顶会), *共同作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 第一个支持复杂静态程序分析的开源 Verilog 分析框架
@@ -69,7 +68,7 @@
 #cventry(
   //   tl: `[Valve],
   tl: [Verilog 形式化语义研究 (Best Artifact Award)],
-  tr: [OOPSLA 2023 (*CCF-A*, 程序分析顶会), *共同作者*],
+  tr: [#link("https://2023.splashcon.org/details/splash-2023-oopsla/40/The-Essence-of-Verilog-A-Tractable-and-Tested-Operational-Semantics-for-Verilog")[OOPSLA 2023] (*CCF-A*, 程序分析顶会), *共同作者*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 对硬件描述语言 Verilog 的语义 (IEEE 1364-2005) 进行形式化*理论建模*, 整理为基于*小步操作语义*的执行规则
