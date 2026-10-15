@@ -34,19 +34,20 @@
 
 #cventry(
   tl: [深度求索 (DeepSeek)],
-  bl: [系统组],
+  bl: [服务端组],
   br: [线上服务实习生],
   tr: [2026.07 - 至今],
 )[
-  - 负责账号和鉴权系统
-  - 为线上 chat 服务添加搜索功能支持
+  - 负责线上服务 (聊天、API 平台) 的账号和鉴权系统
+  - 负责多因子认证功能 (MFA)。通过接入基于签名的可信设备认证体系，实现了对用户几乎无感的 DeepSeek 账号多因子认证流程
+  - 负责短信/邮件验证码基础设施，从 0 搭建验证码统计服务以优化可观测性 (回填率、回填时间、请求量等)，指导供应商选择
 ]
 
 == #fa[#file] 学术论文
 
 #cventry(
-  tl: [别名分析加速技术研究],
-  tr: [#link("https://2026.splashcon.org/details/oopsla-2026/111/Heap-Abstraction-via-Early-Confluent-Object-Merging-for-Pointer-Analysis")[OOPSLA 2026] (*CCF-A*), *第一作者*],
+  tl: [Java 别名分析加速技术研究],
+  tr: [#link("https://2026.splashcon.org/details/oopsla-2026/111/Heap-Abstraction-via-Early-Confluent-Object-Merging-for-Pointer-Analysis")[OOPSLA 2026] (*CCF-A*), *共一第一*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 提出基于*堆抽象*的别名分析 (Alias Analysis) 加速方法, 旨在优化*编译器*、*程序分析器*的别名分析效率
@@ -56,19 +57,19 @@
 
 #cventry(
   //   tl: `[Valve],
-  tl: [硬件程序分析技术研究],
-  tr: [#link("https://pldi26.sigplan.org/details/pldi-2026-papers/57/Exploiting-Sophisticated-Static-Analysis-for-Verilog")[PLDI 2026] (*CCF-A*), *共同作者*],
+  tl: [Verilog 静态分析技术研究],
+  tr: [#link("https://pldi26.sigplan.org/details/pldi-2026-papers/57/Exploiting-Sophisticated-Static-Analysis-for-Verilog")[PLDI 2026] (*CCF-A*), *三作*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
-  - 构建支持复杂静态程序分析的开源 Verilog 分析框架
-  - 实现*复位*分析、*时序*分析、*信息流*分析等关键算法, 以支持*锁存器*推断、*时钟*推断、*安全性*分析等关键应用
+  - 为硬件描述语言 Verilog 构建支持复杂静态程序分析的开源分析框架
+  - 实现*复位*分析、*区间*分析、*信息流*分析等关键算法, 以支持*锁存器*推断、*时钟*推断、*安全性*分析等关键应用
   - 在 11 个开源 Verilog 项目中找到了 18 个真实漏洞/设计缺陷 (9 个为*首次*发现)
 ]
 
 #cventry(
   //   tl: `[Valve],
   tl: [Verilog 形式化语义研究 (Best Artifact Award)],
-  tr: [#link("https://2023.splashcon.org/details/splash-2023-oopsla/40/The-Essence-of-Verilog-A-Tractable-and-Tested-Operational-Semantics-for-Verilog")[OOPSLA 2023] (*CCF-A*), *共同作者*],
+  tr: [#link("https://2023.splashcon.org/details/splash-2023-oopsla/40/The-Essence-of-Verilog-A-Tractable-and-Tested-Operational-Semantics-for-Verilog")[OOPSLA 2023] (*CCF-A*), *三作*],
   //   br: [#link("https://vide.pascal-lab.net")[VIDE]],
 )[
   - 对硬件描述语言 Verilog 的语义 (IEEE 1364-2005) 进行形式化*理论建模*, 整理为基于*小步操作语义*的执行规则
@@ -105,7 +106,7 @@
 )[
   - 实现 C 语言子集编译器, 支持函数调用、循环、结构化数据 (struct/union/array)
   - 参考 LLVM, 实现了 PassManager、RewriterMatcher 等基础设施, 支持添加和管理拥有复杂依赖的 pass 并迭代至不动点
-  - 采用基于 *SSA* 的 IR 设计，实现了*常量传播*、*循环不变量外提*、*归纳变量消除*等复杂编译优化
+  - 实现*常量传播*、*循环不变量外提*、*归纳变量消除*等复杂编译优化
 ]
 
 == #fa[#laptop.code] 专业技能
